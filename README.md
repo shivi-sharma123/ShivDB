@@ -1,24 +1,25 @@
-# MiniDB - The Go Database Engine
+# ShivDB (MiniDB) - The Go Mini Database Engine
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**MiniDB** is a lightweight, transactional, SQL-compliant database engine written in Go. Based on the **LSM Tree (Log-Structured Merge Tree)** architecture, it is designed for educational purposes to demonstrate core database internals including MVCC, WAL, compaction, and query execution.
+**ShivDB** is a lightweight, transactional, SQL-compliant database engine written in Go. Based on the **LSM Tree (Log-Structured Merge Tree)** architecture, it is designed for educational purposes to demonstrate core database internals including MVCC, WAL, compaction, and query execution.
 
 ## 🚀 Key Features
 
-*   **Storage Engine**: LSM Tree (MemTable + SSTables) optimized for write-heavy workloads.
-*   **Durability**: Write-Ahead Logging (WAL) ensures data is never lost, even after a crash.
-*   **Transactions**: Full ACID support with **Snapshot Isolation** using Multi-Version Concurrency Control (MVCC).
-*   **SQL Support**: Custom parser and execution engine supporting `SELECT`, `INSERT`, and `WHERE` clauses.
-*   **Indexing**: Hash Index support for O(1) primary key lookups.
-*   **Compaction**: Background merging of SSTables to reclaim space and improve read performance.
-*   **Interfaces**: Interactive CLI (REPL) and TCP Server mode.
+- **Storage Engine**: LSM Tree (MemTable + SSTables) optimized for write-heavy workloads.
+- **Durability**: Write-Ahead Logging (WAL) ensures data is never lost, even after a crash.
+- **Transactions**: Full ACID support with **Snapshot Isolation** using Multi-Version Concurrency Control (MVCC).
+- **SQL Support**: Custom parser and execution engine supporting `SELECT`, `INSERT`, and `WHERE` clauses.
+- **Indexing**: Hash Index support for O(1) primary key lookups.
+- **Compaction**: Background merging of SSTables to reclaim space and improve read performance.
+- **Interfaces**: Interactive CLI (REPL) and TCP Server mode.
 
 ## 📦 Getting Started
 
 ### Prerequisites
-*   Go 1.20 or higher
+
+- Go 1.20 or higher
 
 ### Installation
 
@@ -33,12 +34,15 @@ make build
 ### Running the Database
 
 **1. Interactive Mode (REPL)**
+
 ```bash
 make run
 ```
+
 Or manually: `./minidb`
 
 **Example Session:**
+
 ```sql
 minidb> HELP
 minidb> SHOW TABLES
@@ -59,13 +63,17 @@ minidb> SELECT * FROM users WHERE id = 1
 ```
 
 **2. Server Mode**
+
 ```bash
 make server
 ```
+
 Or manually: `./minidb -server -port 3000`
 
 ### Testing
+
 Run all tests:
+
 ```bash
 make test
 ```
